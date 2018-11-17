@@ -19,6 +19,10 @@ JIRA_DATABASE_PASSWORD="JIRApasswordDB2018"
 JIRA_PLUGIN_MIRRORING_UPSTREAM="https://jira.gordi.ir"
 JIRA_SSL_CERTIFICATE_PASS="myrandomSSLpass"
 
+# Jira installation URL
+JIRA_CORE_URL="https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-core-7.12.3-x64.bin"
+JIRA_SERVICEDESK_URL="https://product-downloads.atlassian.com/software/jira/downloads/atlassian-servicedesk-3.15.3-x64.bin"
+JIRA_SOFTWARE_URL="https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-7.12.3-x64.bin"
 # JDK 8 tar.gz Archive
 JAVA_REPOSITORY="https://ftp.weheartwebsites.de/linux/java/jdk/"
 JAVA_FILENAME="jdk-8u192-linux-x64.tar.gz"
@@ -183,9 +187,10 @@ SSL_JKS_FILE=`echo "$SSL_DIRECTORY""$JIRA_BASE_URL"".jks"`
 
 export DEBIAN_FRONTEND=noninteractive
 # Run system health check
-echo "0) Run System health check" && system_health_check && echo "$(tput setaf 2)0) Everything should be fine $(tput sgr 0)"
-echo "0) Install System Requirements" && requirements_install && echo "$(tput setaf 2)0) System requirements installed successfully $(tput sgr 0)"
+#echo "0) Run System health check" && system_health_check && echo "$(tput setaf 2)0) Everything should be fine $(tput sgr 0)"
+#echo "0) Install System Requirements" && requirements_install && echo "$(tput setaf 2)0) System requirements installed successfully $(tput sgr 0)"
 echo "0) Install Oracle Java JDK 8" && java_install && echo "$(tput setaf 2)0) Oracle Java JDK 8 Installed successfully.. $(tput sgr 0)"
 echo "0) Create JIRA directory and set permissions" && user_permissions && echo "$(tput setaf 2)0) JIRA Directory created and permission granted successfully.. $(tput sgr 0)"
+
 #echo "0) Install Let'sEncrypt and Issue SSL Certificate" && install_letsencrypt && echo "$(tput setaf 2)0) Let'sEncrypt Installed and SSL Certificate Issued successfully $(tput sgr 0)"
 #echo "0) Task..." && system_health_check && echo "$(tput setaf 2)0) Task successfully.. $(tput sgr 0)"
